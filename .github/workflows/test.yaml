@@ -15,8 +15,10 @@ jobs:
       #   with:
       #     python-version: '3.x'
       - uses: iterative/setup-cml@v1
-      - name: Train model
+      - name: Test model
         run: |
           # Your ML workflow goes here
+          pip cache purge
+          pip install --upgrade pip setuptools wheel
           pip install -r requirements.txt
           python test.py
